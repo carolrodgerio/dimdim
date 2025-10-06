@@ -24,7 +24,7 @@ A aplicação está implantada e pode ser acessada através da seguinte URL:
 
 **`https://dimdim-app-554975-cpcqgaeug7e9fuct.brazilsouth-01.azurewebsites.net`**
 
-❗ IMPORTANTE: Para acessar os endpoints configurados, insira '/api/clientes' ou '/api/contas' ao final da URL.
+❗ IMPORTANTE: Para acessar os endpoints configurados, insira `'/api/clientes'` ou `'/api/contas'` ao final da URL.
 
 ---
 
