@@ -22,7 +22,9 @@ A aplicação foi construída em Java com o framework Spring Boot e implantada n
 
 A aplicação está implantada e pode ser acessada através da seguinte URL:
 
-**`[https://[NOME_DO_SEU_APP].azurewebsites.net](https://dimdim-app-554975-cpcqgaeug7e9fuct.brazilsouth-01.azurewebsites.net)`**
+**`[https://dimdim-app-554975-cpcqgaeug7e9fuct.brazilsouth-01.azurewebsites.net](https://dimdim-app-554975-cpcqgaeug7e9fuct.brazilsouth-01.azurewebsites.net)`**
+
+❗ IMPORTANTE: Para acessar os endpoints configurados, insira '/api/clientes' ou '/api/contas' ao final da URL.
 
 ---
 
