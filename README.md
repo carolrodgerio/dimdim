@@ -4,7 +4,7 @@
 
 Este repositório contém o projeto **DimDim**, uma API REST para um banco digital fictício. O projeto foi desenvolvido como parte do 5º Checkpoint da disciplina de **DevOps Tools & Cloud Computing** do curso de Análise e Desenvolvimento de Sistemas da FIAP.
 
-A aplicação foi construída em Java com o framework Spring Boot e implantada na nuvem da **Microsoft Azure**, utilizando um Serviço de Aplicativo (Web App) e um Banco de Dados do Azure para PostgreSQL como serviço (PaaS).
+A aplicação foi construída em Java com o framework Spring Boot e implantada na nuvem da **Microsoft Azure**, utilizando um Serviço de Aplicativo (Web App) e um Banco de Dados do Azure para SQL Server como serviço (PaaS).
 
 ---
 
@@ -32,10 +32,10 @@ A aplicação está implantada e pode ser acessada através da seguinte URL:
 
 * **Linguagem:** Java 17
 * **Framework:** Spring Boot
-* **Banco de Dados:** PostgreSQL (Banco de Dados do Azure para PostgreSQL)
+* **Banco de Dados:** SQL Server (Banco de Dados do Azure)
 * **Plataforma Cloud:** Microsoft Azure
     * Serviço de Aplicativo (Web App)
-    * Banco de Dados do Azure para PostgreSQL
+    * Banco de Dados do Azure para SQL Server
     * Application Insights (para monitoramento)
 * **Build e Dependências:** Apache Maven
 * **IDE:** Visual Studio Code
@@ -56,11 +56,12 @@ Este guia descreve os passos para implantar esta aplicação no seu próprio amb
 
 ### Passo 1: Criar os Recursos no Portal Azure
 
-1.  **Criar o Banco de Dados (PostgreSQL):**
-    * No Portal Azure, procure por "Banco de Dados do Azure para PostgreSQL" e crie um **Servidor Flexível**.
+1.  **Criar o Banco de Dados (SQL Server):**
+    * No Portal Azure, procure por "Banco de Dados SQL Server" e crie um servidor.
     * Configure um nome para o servidor, um usuário e senha de administrador.
     * Na aba "Rede", habilite o "Acesso Público" e adicione uma regra de firewall para permitir o acesso do seu IP atual.
     * Anote o nome do servidor, o usuário e a senha.
+    * Após a criação do servidor, na mesma tela, crie também o banco de dados.
 
 2.  **Criar o Serviço de Aplicativo (Web App):**
     * No Portal Azure, procure por "Serviços de Aplicativos" e clique em "Criar".
@@ -85,9 +86,9 @@ Este guia descreve os passos para implantar esta aplicação no seu próprio amb
     * Navegue até `src/main/resources/application.properties`.
     * Altere as seguintes linhas com as credenciais do seu banco de dados criado no passo 1:
         ```properties
-        spring.datasource.url=jdbc:postgresql://[NOME_DO_SEU_SERVIDOR][.postgres.database.azure.com:5432/postgres?sslmode=require](https://.postgres.database.azure.com:5432/postgres?sslmode=require)
-        spring.datasource.username=[SEU_USUARIO_ADMIN]
-        spring.datasource.password=[SUA_SENHA]
+      spring.datasource.url=jdbc:sqlserver://<SEU_SERVIDOR_SQL>.database.windows.net:1433;database=<SEU_BANCO_SQL>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+      spring.datasource.username=<SEU_USUARIO_ADMIN>
+      spring.datasource.password=<SUA_SENHA>
         ```
 
 3.  **Fazer o Deploy via VS Code:**
